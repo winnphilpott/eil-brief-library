@@ -69,7 +69,7 @@ format:
 % ---------------------------------------------------------------------
 % TITLE + CITATION  (masthead repeats in the page header)
 % ---------------------------------------------------------------------
-\brieftitle{No evidence that compliance assistance reduces environmental violations}
+\brieftitle{Does compliance assistance reduce environmental violations?}
 \briefcitation{Lessons from ``The Effect of Compliance Assistance on Pollution Discharges and Violations of Environmental Regulations'' by Paul J. Ferraro \& Jay P. Shimshack in \textit{Journal of Policy Analysis and Management}, 2026.}
 
 \vspace{-2pt}
@@ -97,7 +97,7 @@ In new research studying hundreds of polluting facilities that were offered free
   \centering
   \includegraphics[width=3.55in]{../../data-viz/figures/fig-two-approaches.pdf}
 \end{wrapfigure}
-\noindent Environmental enforcement in the U.S. has long centered on inspecting facilities, catching violations, and levying fines. \textbf{Compliance assistance} takes a different approach: regulators offer workshops, technical guidance, and other support to help facilities understand and meet regulatory requirements. This approach reflects the belief that many violations result from confusion or limited expertise rather than deliberate corner-cutting. Compliance assistance programs have become increasingly popular as a policy lever, but evidence on whether they are effective is scarce.
+\noindent Environmental enforcement in the U.S. has long centered on inspecting facilities, catching violations, and levying fines. \textbf{Compliance assistance} takes a different approach: regulators offer workshops, technical guidance, and other support to help facilities understand and meet regulatory requirements. This approach reflects the belief that many violations result from confusion or limited expertise rather than deliberate corner-cutting. Compliance assistance programs have become increasingly popular as a policy lever, but evidence on whether they work is scarce.
 
 \noindent \textbf{In a new study, Ferraro and Shimshack (2026) find that compliance assistance workshops and training did not reduce regulatory violations or pollution discharges.} The researchers analyzed data from hundreds of Ohio wastewater treatment facilities that had recently been cited for violations and were invited to attend workshops rolled out over several months.
 
