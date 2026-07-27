@@ -23,12 +23,12 @@
 \usetikzlibrary{arrows.meta}
 
 % ---- palette (sampled from the PNG) ---------------------------------
-\definecolor{maroon}{HTML}{8A2424}    % title, right column, bottom line
+\definecolor{maroon}{HTML}{8A2424}    % title, right column
 \definecolor{graytext}{HTML}{6F6A63}  % left header, left boxes, arrows
 \definecolor{softgray}{HTML}{928D85}  % subtitle + captions (italic)
 \definecolor{leftfill}{HTML}{F0EFEC}  % left box fill
 \definecolor{rightfill}{HTML}{F7EDEC} % right box fill
-\definecolor{rule}{HTML}{DDDDDB}      % divider + bottom rule
+\definecolor{rule}{HTML}{DDDDDB}      % vertical divider
 \definecolor{ink}{HTML}{333333}       % shared outcome banner (neutral)
 
 \begin{document}
@@ -74,11 +74,6 @@
 
   % --- vertical divider (stops above the shared banner) --------------
   \draw[rule, line width=1pt] (74.8,80) -- (74.8,33);
-
-  % --- bottom rule + closing line ------------------------------------
-  \draw[rule, line width=1pt] (0,14) -- (150,14);
-  \node[anchor=north, maroon, font=\bfseries\fontsize{10.7pt}{12pt}\selectfont]
-    at (75,12) {This study tests whether compliance assistance works.};
 
 \end{tikzpicture}
 \end{document}

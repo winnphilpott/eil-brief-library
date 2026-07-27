@@ -92,10 +92,13 @@ In new research studying hundreds of polluting facilities that were offered free
 % BACKGROUND  (broad — poses the question)
 % ---------------------------------------------------------------------
 \sectionhead{Background}
-\begin{wrapfigure}{r}{3.55in}
+% Figure width is layout-critical: 3.90in is the hard ceiling — beyond it the
+% closing paragraph of "No effect on violations or discharges" breaks onto p2.
+% 3.85in keeps a buffer so small copy edits don't tip the page.
+\begin{wrapfigure}{r}{3.85in}
   \vspace{-\intextsep}
   \centering
-  \includegraphics[width=3.55in]{../../data-viz/figures/fig-two-approaches.pdf}
+  \includegraphics[width=3.85in]{../../data-viz/figures/fig-two-approaches.pdf}
 \end{wrapfigure}
 \noindent Environmental enforcement in the U.S. has long centered on inspecting facilities, catching violations, and levying fines. \textbf{Compliance assistance} takes a different approach: regulators offer workshops, technical guidance, and other support to help facilities understand and meet regulatory requirements. This approach reflects the belief that many violations result from confusion or limited expertise rather than deliberate corner-cutting. Compliance assistance programs have become increasingly popular as a policy lever, but evidence on whether they work is scarce.
 
