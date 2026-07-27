@@ -4,11 +4,11 @@
 #  Canonical layout: see style-guides/research-highlight/README.md
 #  Render:  quarto render research-highlights-template.qmd
 #  Design system: _style.tex (colours, fonts, boxes, macros)
-#  Figure: build with a script in code/ and save to figures/
+#  Figure: build with a script in ../data-viz/code/ and save to ../data-viz/figures/
 #
 #  LENGTH — use the space the paper warrants; pick ONE budget, stay close:
-#    One page  | Background ~120 | Challenge ~180 | Findings ~150 + 1 fig
-#    Two pages | Background ~180 | Challenge ~300 | Findings ~250 + 1-2 figs
+#    One page  | Background ~120 | Challenge ~180 | Findings ~150 + 1 fig  | Implications ~120
+#    Two pages | Background ~180 | Challenge ~300 | Findings ~250 + 1-2 figs | Implications ~150
 #  Don't shrink the layout to fit, and don't pad to fill a second page.
 # =====================================================================
 format:
@@ -76,7 +76,7 @@ format:
 }
 \end{bottomline}
 
-\vspace{2pt}
+\vspace{6pt}
 
 % ---------------------------------------------------------------------
 % BACKGROUND  (~120 words, 2 paragraphs)
@@ -86,7 +86,7 @@ format:
 
 \noindent [Describe the setting and data in plain language — who was studied, what records the researchers had, and over what period.]
 
-\vspace{2pt}
+\vspace{6pt}
 
 % ---------------------------------------------------------------------
 % THE CHALLENGE  (~180–300 words) — the research-design story
@@ -104,32 +104,40 @@ format:
 
 \noindent [How the researchers got around it. \textbf{Bold the sentence naming the actual comparison they used.} Note what makes it fair.]
 
-\vspace{2pt}
+\vspace{6pt}
 
 % ---------------------------------------------------------------------
 % FINDINGS  (~150 words + figure) — head this with the finding itself,
 % not "What the study found."
-% FIGURE — one figure, centered. Build via a script in code/ -> figures/
+% FIGURE — one figure, centered. Build via a script in ../data-viz/code/ -> ../data-viz/figures/
 % ---------------------------------------------------------------------
 \sectionhead{[The finding, stated — e.g. "No effect on violations or discharges"]}
 \noindent [State the result, pointing the reader to the figure below. \textbf{Bold the headline finding.}]
 
-\vspace{4pt}
+\vspace{6pt}
 
 \begin{center}
 \begin{minipage}{0.75\linewidth}
 \figtitle{[Sentence-style figure title — what the chart shows]}{Source: [Author(s)] ([Year]), Fig.\ [N].}
-\includegraphics[width=\linewidth]{figures/[figure].png}
+\includegraphics[width=\linewidth]{../data-viz/figures/[figure].png}
 \par\vspace{3pt}
 {\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} [Plain-language note: how to read the chart and what to conclude from it.]\par}
 \end{minipage}
 \end{center}
 
-\vspace{4pt}
+\vspace{6pt}
 
-\noindent [Short closing paragraph — no subhead. Draw out what the result means, \textbf{bold the one line worth keeping}, and, where relevant, name the limit plainly before restating the point.]
+% ---------------------------------------------------------------------
+% IMPLICATIONS FOR POLICY  (~120 words, ~2 paragraphs) — zoom out from
+% the finding to what it means for policy and practice. State the stakes
+% soberly; name the limit plainly. See style guide §2 (calibrated humility).
+% ---------------------------------------------------------------------
+\sectionhead{Implications for policy}
+\noindent [Draw out what the result means for policy if it holds more broadly. \textbf{Bold the one line worth keeping.} State the stakes soberly — let the facts land, don't lean on adjectives.]
 
-\vspace{4pt}
+\noindent [Name the limit plainly — one study, one setting — and what it does and doesn't imply, then restate the real point.]
+
+\vspace{6pt}
 
 \begin{moreinfo}
 Contact [Corresponding author] ([email]) with questions about this research.\par
