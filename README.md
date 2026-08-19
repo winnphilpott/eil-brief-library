@@ -12,7 +12,7 @@ eil-output-library/
 │       │   ├── code/          # Figure scripts
 │       │   ├── data/          # Datasets (excluded from git)
 │       │   └── figures/       # Figure outputs (shared across outputs)
-│       ├── research-highlight/  # One-page research highlight
+│       ├── research-highlight/  # Two-page research highlight
 │       ├── press-release/     # Press release
 │       ├── blog/              # Blog post copy and assets
 │       └── social/            # Social media copy and assets
