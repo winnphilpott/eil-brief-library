@@ -1,0 +1,288 @@
+---
+# =====================================================================
+#  Research highlight — one- to two-page PDF (LaTeX/PDF via Quarto)
+#  SCAFFOLD ONLY — no prose written yet. Guidance comments (%) below
+#  each section point to real numbers/figures from the paper and to
+#  Grant's framing notes + the 2026-08-19 meeting notes. Fill in the
+#  bracketed [...] blocks, then delete the GUIDANCE comments.
+#  Target: NBER WP release "hopefully Monday" (2026-08-24).
+#  Canonical layout: see style-guides/research-highlight/README.md
+#  Render:  quarto render wildfire-losses_research-highlight.qmd
+#  Design system: _style.tex (colours, fonts, boxes, macros)
+#  Figure: build with a script in ../data-viz/code/ and save to ../data-viz/figures/
+#
+#  STORY MAP (per Grant's "hourglass" + meeting notes):
+#    Background   -> broad scene (disaster losses rising) narrowing to who
+#                     ends up living in a fire's path / whose home burns
+#                     (Grant's result 1 — descriptive).
+#    The challenge -> isolating the causal effect of losing a home, not just
+#                     living through a fire. Grant: causality is comparatively
+#                     clean here vs. the EPA paper — less hedging needed.
+#    Findings     -> headline = Grant's result 2: home loss causes a sharp,
+#                     multi-year income loss on top of the property damage.
+#    Implications -> Grant's result 3: neighborhoods recover slowly and who
+#                     lives there changes (people -> place).
+#  AVOID (Grant, both notes): the words "hazard" and "vulnerability."
+#  Use only numbers from the paper text — not from any slide deck.
+#
+#  LENGTH — use the space the paper warrants; pick ONE budget, stay close:
+#    One page  | Background ~120 | Challenge ~180 | Findings ~150 + 1 fig  | Implications ~120
+#    Two pages | Background ~180 | Challenge ~300 | Findings ~250 + 1-2 figs | Implications ~150
+#  Don't shrink the layout to fit, and don't pad to fill a second page.
+# =====================================================================
+format:
+  pdf:
+    pdf-engine: pdflatex
+    documentclass: article
+    fontsize: 11pt
+    geometry:
+      - top=0.4in
+      - bottom=0.45in
+      - left=0.65in
+      - right=0.65in
+      - includehead
+      - headheight=52pt
+      - headsep=7pt
+      - includefoot
+      - footskip=24pt
+    include-in-header:
+      - file: ../../../formats/research-highlight/_style.tex
+      - text: |
+          % --- Running masthead + footer (logo, label, rule, page number) ---
+          \usepackage{fancyhdr}
+          \renewcommand{\headrulewidth}{0pt}
+          \renewcommand{\footrulewidth}{0pt}
+          \fancypagestyle{brief}{%
+            \fancyhf{}%
+            \fancyhead[L]{%
+              \begin{minipage}[c]{0.62\textwidth}\raggedright\color{ink}\includegraphics[height=0.45in]{../../../formats/logos/eil-logo-maroon.png}\end{minipage}\hfill%
+              \begin{minipage}[c]{0.36\textwidth}\raggedleft\fontsize{8.25pt}{10pt}\selectfont\bfseries\color{accentred}\textls[200]{\MakeUppercase{Research Highlight}}\end{minipage}%
+              \par\vspace{2pt}%
+              \noindent\textcolor{ink}{\rule{\textwidth}{2.2pt}}%
+            }%
+            \fancyfoot[C]{%
+              \color{warmrule}\rule{\textwidth}{0.7pt}\par\vspace{3pt}%
+              \hbox to\textwidth{%
+                \color{faint}\fontsize{7.4pt}{9pt}\selectfont
+                For full paper:\hspace{0.4em}\href{[NBER working paper link — add once available]}{\color{faint}\underline{\textls[40]{[nber.org/papers/... — add once available]}}}%
+                \hfill
+                Page \thepage%
+              }%
+            }%
+          }
+          \pagestyle{brief}
+    keep-tex: true
+---
+
+```{=latex}
+% ---------------------------------------------------------------------
+% TITLE + CITATION  (masthead repeats in the page header)
+% ---------------------------------------------------------------------
+\brieftitle{[Title — state the finding as a claim, not a topic.
+  GUIDANCE: candidate angle is Grant's result 2 — losing a home costs years
+  of income on top of the rebuild. Don't lean on "hazard"/"vulnerability."]}
+\briefcitation{Lessons from ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims'' by Patrick Baylis, Judson Boomhower, Jonathan Colmer, and John Voorheis, NBER Working Paper, 2026.}
+
+\vspace{-2pt}
+
+% override body font size for this document
+\fontsize{10.5pt}{13.5pt}\selectfont
+
+% ---------------------------------------------------------------------
+% BOTTOM LINE  (~40–50 words)
+% ---------------------------------------------------------------------
+% GUIDANCE: Core claim = when a wildfire destroys a home, occupants don't
+% just lose the structure — they lose income too, for years afterward.
+% Headline number: cumulative income losses equal to 30% of pre-fire annual
+% income (~$38,000), concentrated entirely among occupants of DESTROYED
+% homes. Occupants of homes that survived the same fire, and people living
+% just outside the perimeter, show no measurable income effect — so the
+% loss tracks losing the home, not living through the fire. Causality here
+% is comparatively clean (Grant) — state it plainly, minimal hedging needed.
+\begin{bottomline}
+{\fontsize{11pt}{15pt}\selectfont
+\textbf{[The core finding in one bold sentence.]} [One or two sentences expanding on the finding and why it matters.]
+}
+\end{bottomline}
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% BACKGROUND  (~120 words, 2 paragraphs)
+% ---------------------------------------------------------------------
+\sectionhead{Background}
+% GUIDANCE — Para 1 (set the scene, narrow to the study):
+%   - Grant's suggested open: global natural-catastrophe losses ($320B in
+%     2024, Munich Re) -> narrow to "the near-universe of catastrophic U.S.
+%     wildfires" this paper studies (~150 fires, 2003-2022, matched to
+%     individual damage assessments).
+%   - Frame the three-part question (Grant's hourglass): who ends up living
+%     in a fire's path and whose home actually burns; what happens to a
+%     household's finances after a home is destroyed; how the neighborhood
+%     itself changes during recovery.
+%   - Wildfires are increasing — climate change, more building in fire-prone
+%     areas, fuel buildup from past suppression (paper's Conclusion) — a
+%     natural stakes-setting line per the meeting notes ("we need to think
+%     about all of the decisions that go into policies around this issue").
+% Para 2 (setting + data):
+%   - Property-level damage assessments for those fires, linked to IRS tax
+%     records and Census microdata — lets the study follow the SAME
+%     individual before and after a fire, rather than only zip-code-level
+%     averages that can't tell a burned-out household from an untouched
+%     neighbor. This granularity is the paper's key methodological edge.
+%   - Three groups compared: occupants of DESTROYED homes, occupants of
+%     homes inside the fire perimeter that SURVIVED, and people living just
+%     outside the perimeter.
+% Wording (Grant, both notes): avoid "hazard" and "vulnerability" — use
+% plain phrasing like "who lives in a fire's path" / "whose home actually
+% burns."
+% Candidate Background (page-1) figure: recreate Fig. 1 (map of destroyed/
+% surviving/adjacent homes, 2020 Glass Fire) or Fig. 2 (pre-fire income
+% distribution, destroyed vs. surviving occupants) to visualize who's
+% exposed / whose home is lost. Grant: "room for doing some good framing
+% here with the figures... be creative." Confirm exact point estimates with
+% Grant before building the recreation script if reusing either — not all
+% are disclosed directly in the paper text.
+\noindent [Set up the policy problem. Define any key term on first use in \textbf{bold}, then explain it plainly. Spell out agencies on first mention. End on the open question the study tests.]
+
+\noindent [Describe the setting and data in plain language — who was studied, what records the researchers had, and over what period.]
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% THE CHALLENGE  (~180–300 words) — the research-design story
+% ---------------------------------------------------------------------
+\sectionhead{The challenge}
+% GUIDANCE — Grant: this causal story is comparatively straightforward
+% (vs. the EPA compliance paper), so this section can be tighter/more direct.
+%   - The obstacle: can't observe what would have happened to the SAME
+%     people if their home hadn't burned. A simple before/after comparison
+%     risks picking up ordinary local income trends, not the fire's effect.
+%   - Comparing fire-zone residents to people elsewhere also confounds —
+%     occupants of wildfire-affected homes are wealthier, more likely to be
+%     white, and older than the U.S. population on average (Sec. 3.1),
+%     simply because of WHERE wildfires tend to occur — that reflects who
+%     lives in a fire's path, not the fire's effect.
+%   - Their solution: compare occupants of destroyed homes to occupants of
+%     homes in the SAME fire that survived, and to people living just
+%     outside that fire's perimeter (0–10km / 10–25km rings) — tracking
+%     each group's income in the years before and after.
+%   - What makes it credible: pre-fire, all groups were on similar income
+%     trajectories (no evidence of differential pre-trends) — so the
+%     post-fire divergence can be attributed to the fire/home loss, not
+%     pre-existing differences (meeting notes: "before, similar
+%     trajectories between home losers, home survivors, and similar people
+%     outside of fire perimeter").
+% Optional color on why this is a large financial shock worth taking
+% seriously (meeting notes): insurance often covers only 60–80% of a total
+% loss, and a wave of local rebuilding demand can push reconstruction costs
+% up further — destroyed-home occupants are absorbing a real financial hit
+% before even counting the income losses this paper measures (paper
+% footnote 8, re: insurance shortfalls in the 2021 Marshall Fire). Could
+% live here or fold into Background instead.
+\noindent \textbf{[State the core evaluation problem in one bold sentence a skimmer can catch.]} [Why seeing the counterfactual directly is impossible, so a stand-in comparison is needed.]
+
+\noindent [The naive before/after comparison and why it misleads.]
+
+\noindent [The next instinct — comparing against a different group — and the complication it introduces.]
+
+\noindent [How the researchers got around it. \textbf{Bold the sentence naming the actual comparison they used.} Note what makes it fair.]
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% FINDINGS  (~150 words + figure)
+% ---------------------------------------------------------------------
+% GUIDANCE — headline finding (Grant's result 2, "the effects"):
+%   - Occupants of DESTROYED homes see income fall for three years after
+%     the fire, peaking around an 11% drop in year two, returning to the
+%     comparison group's level by year four. Cumulative loss ≈ 30% of one
+%     year's pre-fire income (~$38,000 on average).
+%   - Critically: occupants of homes that SURVIVED the same fire, and
+%     people living just outside the perimeter, show close to NO income
+%     effect. The loss tracks whose home was actually destroyed — not
+%     everyone who lived through the fire (meeting notes: "people don't
+%     lose their house, they lose their earnings as well").
+%   - The "why" is an open question the paper itself doesn't fully resolve
+%     — worth naming as a limit/hook rather than speculating (e.g. time
+%     spent managing rebuilding; reduced hours rather than job loss, since
+%     employment rates barely move). Don't overclaim a mechanism the paper
+%     doesn't test.
+% Figure candidate: Fig. 4 Panel A ("The Effect of Wildfires on Income by
+% Damage") — income trajectory for Destroyed vs. Survived vs. Adjacent,
+% years -4 to +4 relative to the fire.
+% Meeting-note tip: the event-study coefficients and the raw group-average
+% trajectories "look pretty much the same" — a plainer raw-data line chart
+% may read more intuitively to a general audience than a formal coefficient
+% plot; worth trying both before committing.
+% Ask Grant for exact point estimates before building the recreation
+% script — not all are disclosed in the paper text, and pull numbers only
+% from the paper, not from any slide deck.
+\sectionhead{[The finding, stated — e.g. "Losing a home costs years of income, not just the rebuild"]}
+\noindent [State the result, pointing the reader to the figure below. \textbf{Bold the headline finding.}]
+
+\vspace{6pt}
+
+\begin{center}
+\begin{minipage}{0.75\linewidth}
+\figtitle{[Sentence-style figure title — what the chart shows]}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
+\includegraphics[width=\linewidth]{../data-viz/figures/[figure].png}
+\par\vspace{3pt}
+{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} [Plain-language note: how to read the chart and what to conclude from it.]\par}
+\end{minipage}
+\end{center}
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% IMPLICATIONS FOR POLICY  (~120 words, ~2 paragraphs)
+% ---------------------------------------------------------------------
+\sectionhead{Implications for policy}
+% GUIDANCE — Grant's result 3 (people -> place): recovery is slow and who
+% lives in a neighborhood changes.
+%   - Four years after a fire, half of destroyed addresses are still
+%     unoccupied (Fig. 9).
+%   - Among addresses that ARE reoccupied, incomes are notably higher than
+%     the pre-fire average, and occupants skew younger (share 65+ is
+%     lower) (Fig. 10) — the people moving back in/moving in new differ
+%     from the people who left.
+%   - Policy framing (meeting notes): recovery/aid programs should ask
+%     whether they're helping the people who actually lost their homes, or
+%     mostly benefiting whoever moves in afterward — relevant for
+%     disaster-recovery and housing-policy design.
+%   - Possible forward-looking angle (meeting notes takeaways): subsidizing
+%     defensive/mitigation investment before a fire, given how costly
+%     losing a home turns out to be. State any policy implication
+%     cautiously — one study, a specific set of large U.S. wildfires,
+%     2003–2022 ("exercise caution!").
+%   - Grant: no need to benchmark against other disaster types (hurricanes,
+%     floods, etc.) — the paper does this; the highlight doesn't need to.
+%   - Tone (meeting notes): "let the results speak for themselves" —
+%     wildfires are already personally salient to most readers; no need to
+%     oversell the stakes.
+\noindent [Draw out what the result means for policy if it holds more broadly. \textbf{Bold the one line worth keeping.} State the stakes soberly — let the facts land, don't lean on adjectives.]
+
+\noindent [Name the limit plainly — one study, one setting — and what it does and doesn't imply, then restate the real point.]
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% FOR MORE INFO
+% ---------------------------------------------------------------------
+% GUIDANCE: corresponding author/contact not stated in the paper — confirm
+% with the author team before publishing. Titles/ranks below are left
+% blank intentionally (not stated in the paper) — fill in once confirmed.
+\begin{moreinfo}
+Contact [Corresponding author] ([email]) with questions about this research.\par
+
+Baylis, Patrick, Judson Boomhower, Jonathan Colmer, and John Voorheis. 2026. ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims.'' NBER Working Paper. \href{[NBER working paper link — add once available]}{\color{cite}\underline{[nber.org/papers/... — add once available]}}.\par
+
+\textbf{Patrick Baylis} is [title] at the Vancouver School of Economics, University of British Columbia.\par
+\textbf{Judson Boomhower} is [title] in the Department of Economics at the University of California San Diego, and [status] at NBER.\par
+\textbf{Jonathan Colmer} is [title] in the Department of Economics at the University of Virginia.\par
+\textbf{John Voorheis} is [title] at the Center for Economic Studies, U.S. Census Bureau.\par
+
+The \href{https://www.environmental-inequality-lab.org/}{\color{cite}\underline{Environmental Inequality Lab}} is a nonpartisan research group that applies a rigorous, data-driven approach to understand how our environment shapes economic opportunity and well-being.\par
+\end{moreinfo}
+
+```
