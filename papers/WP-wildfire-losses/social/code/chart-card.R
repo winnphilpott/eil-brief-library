@@ -68,8 +68,10 @@ p <- ggplot(mapping = aes(year, est)) +
            label = "Home destroyed",
            size = 3.4, color = eil_pal$accentred, fontface = "bold") +
 
+  # log points, not percent -- gridlines sit at log(0.95) / log(0.90) so
+  # the labels are exact. See make-fig1-income-by-damage.R for the why.
   scale_y_continuous(limits = c(-0.138, 0.042),
-                     breaks = c(0, -0.05, -0.10),
+                     breaks = c(0, log(0.95), log(0.90)),
                      labels = c("Same income", "5% less", "10% less")) +
   scale_x_continuous(breaks = c(-4, -2, 0, 2, 4),
                      labels = c("4 years before", "2 years before", "Fire",

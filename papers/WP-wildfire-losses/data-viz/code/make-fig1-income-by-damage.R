@@ -78,10 +78,17 @@ p <- ggplot(mapping = aes(year, est)) +
            label = "Home destroyed",
            size = 2.7, color = eil_pal$accentred, fontface = "bold") +
 
-  # the top label names the quantity so the axis reads as income without
-  # needing an axis title; the two below inherit the noun
+  # The estimates are in LOG POINTS (the paper plots log AGI), so the
+  # gridlines sit at the log values that correspond to a round percentage
+  # drop -- log(0.95) and log(0.90) -- not at -0.05 and -0.10. Over this
+  # range the two differ by up to half a percentage point, which is small
+  # but is exactly the kind of slippage a reader can't see and can't
+  # correct for. Don't "tidy" these back to round numbers.
+  #
+  # The top label names the quantity so the axis reads as income without
+  # needing an axis title; the two below inherit the noun.
   scale_y_continuous(limits = c(-0.138, 0.042),
-                     breaks = c(0, -0.05, -0.10),
+                     breaks = c(0, log(0.95), log(0.90)),
                      labels = c("Same income", "5% less", "10% less")) +
   scale_x_continuous(breaks = c(-4, -2, 0, 2, 4),
                      labels = c("4 years before", "2 years before", "Fire",

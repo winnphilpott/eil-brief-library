@@ -1,13 +1,5 @@
 # LinkedIn — wildfire losses
 
-<!--
-  Approved draft. Style: style-guides/social/README.md — §4 voice, §5 attribution, §8 budget.
-  Runs past the §8 body budget (2–4 short lines); the third paragraph is the
-  one to cut if it needs to come down.
-  Numbers are from the paper text, not from a slide deck.
-  Image: pick one card from ../assets/ — see the note at the foot.
--->
-
 **Hook:** When a wildfire destroys a home, the loss doesn't stop at the property. New research finds that occupants of destroyed homes earn less for three years after the fire, a cumulative loss equal to 30% of a year's income — about $38,000 — on top of the cost of rebuilding.
 
 **Why it matters:**
