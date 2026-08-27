@@ -1,34 +1,6 @@
 ---
 # =====================================================================
 #  Research highlight — one- to two-page PDF (LaTeX/PDF via Quarto)
-#  SCAFFOLD ONLY — no prose written yet. Guidance comments (%) below
-#  each section point to real numbers/figures from the paper and to
-#  Grant's framing notes + the 2026-08-19 meeting notes. Fill in the
-#  bracketed [...] blocks, then delete the GUIDANCE comments.
-#  Target: NBER WP release "hopefully Monday" (2026-08-24).
-#  Canonical layout: see style-guides/research-highlight/README.md
-#  Render:  quarto render wildfire-losses_research-highlight.qmd
-#  Design system: _style.tex (colours, fonts, boxes, macros)
-#  Figure: build with a script in ../data-viz/code/ and save to ../data-viz/figures/
-#
-#  STORY MAP (per Grant's "hourglass" + meeting notes):
-#    Background   -> broad scene (disaster losses rising) narrowing to who
-#                     ends up living in a fire's path / whose home burns
-#                     (Grant's result 1 — descriptive).
-#    The challenge -> isolating the causal effect of losing a home, not just
-#                     living through a fire. Grant: causality is comparatively
-#                     clean here vs. the EPA paper — less hedging needed.
-#    Findings     -> headline = Grant's result 2: home loss causes a sharp,
-#                     multi-year income loss on top of the property damage.
-#    Implications -> Grant's result 3: neighborhoods recover slowly and who
-#                     lives there changes (people -> place).
-#  AVOID (Grant, both notes): the words "hazard" and "vulnerability."
-#  Use only numbers from the paper text — not from any slide deck.
-#
-#  LENGTH — use the space the paper warrants; pick ONE budget, stay close:
-#    One page  | Background ~120 | Challenge ~180 | Findings ~150 + 1 fig  | Implications ~120
-#    Two pages | Background ~180 | Challenge ~300 | Findings ~250 + 1-2 figs | Implications ~150
-#  Don't shrink the layout to fit, and don't pad to fill a second page.
 # =====================================================================
 format:
   pdf:
@@ -48,6 +20,8 @@ format:
     include-in-header:
       - file: ../../../formats/research-highlight/_style.tex
       - text: |
+          % --- Background wrap figure ---
+          \usepackage{wrapfig}
           % --- Running masthead + footer (logo, label, rule, page number) ---
           \usepackage{fancyhdr}
           \renewcommand{\headrulewidth}{0pt}
@@ -89,14 +63,6 @@ format:
 % ---------------------------------------------------------------------
 % BOTTOM LINE  (~40–50 words)
 % ---------------------------------------------------------------------
-% GUIDANCE: Core claim = when a wildfire destroys a home, occupants don't
-% just lose the structure — they lose income too, for years afterward.
-% Headline number: cumulative income losses equal to 30% of pre-fire annual
-% income (~$38,000), concentrated entirely among occupants of DESTROYED
-% homes. Occupants of homes that survived the same fire, and people living
-% just outside the perimeter, show no measurable income effect — so the
-% loss tracks losing the home, not living through the fire. Causality here
-% is comparatively clean (Grant) — state it plainly, minimal hedging needed.
 \begin{bottomline}
 {\fontsize{11pt}{15pt}\selectfont
 New research studying nearly all wildfires in the past 25 years shows that \textbf{when a wildfire destroys a home, occupants don't just lose the structure — they lose income too, for years afterward.} 
@@ -109,41 +75,19 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 % BACKGROUND  (~120 words, 2 paragraphs)
 % ---------------------------------------------------------------------
 \sectionhead{Background}
-% GUIDANCE — Para 1 (set the scene, narrow to the study):
-%   - Grant's suggested open: global natural-catastrophe losses ($320B in
-%     2024, Munich Re) -> narrow to "the near-universe of catastrophic U.S.
-%     wildfires" this paper studies (~150 fires, 2003-2022, matched to
-%     individual damage assessments).
-%   - Frame the three-part question (Grant's hourglass): who ends up living
-%     in a fire's path and whose home actually burns; what happens to a
-%     household's finances after a home is destroyed; how the neighborhood
-%     itself changes during recovery.
-%   - Wildfires are increasing — climate change, more building in fire-prone
-%     areas, fuel buildup from past suppression (paper's Conclusion) — a
-%     natural stakes-setting line per the meeting notes ("we need to think
-%     about all of the decisions that go into policies around this issue").
-% Para 2 (setting + data):
-%   - Property-level damage assessments for those fires, linked to IRS tax
-%     records and Census microdata — lets the study follow the SAME
-%     individual before and after a fire, rather than only zip-code-level
-%     averages that can't tell a burned-out household from an untouched
-%     neighbor. This granularity is the paper's key methodological edge.
-%   - Three groups compared: occupants of DESTROYED homes, occupants of
-%     homes inside the fire perimeter that SURVIVED, and people living just
-%     outside the perimeter.
-% Wording (Grant, both notes): avoid "hazard" and "vulnerability" — use
-% plain phrasing like "who lives in a fire's path" / "whose home actually
-% burns."
-% Candidate Background (page-1) figure: recreate Fig. 1 (map of destroyed/
-% surviving/adjacent homes, 2020 Glass Fire) or Fig. 2 (pre-fire income
-% distribution, destroyed vs. surviving occupants) to visualize who's
-% exposed / whose home is lost. Grant: "room for doing some good framing
-% here with the figures... be creative." Confirm exact point estimates with
-% Grant before building the recreation script if reusing either — not all
-% are disclosed directly in the paper text.
+% TODO — Background figure not yet built: recreate Fig. 1 (Glass Fire map of
+% destroyed/surviving/adjacent homes) or Fig. 2 (pre-fire income distribution,
+% destroyed vs. surviving). Confirm estimates with Grant before scripting it.
+\begin{wrapfigure}{r}{3.85in}
+  \vspace{-\intextsep}
+  \centering
+  \includegraphics[width=3.85in]{../data-viz/figures/fig-comparison-groups.pdf}
+\end{wrapfigure}
+\hyphenpenalty=10000 \exhyphenpenalty=10000
 \noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. Though this number is striking, it masks that \textbf{the financial consequences of disasters are unevenly distributed across households.} To respond well to disasters, it's important to know who bears the losses, whether the damage to household finances goes beyond the cost of rebuilding, and what happens to a neighborhood as it recovers. This is especially true for areas prone to wildfires, which are increasing in frequency and severity.
 
-\noindent \textbf{In a new working paper, Baylis et al. (2026) find that those whose homes were destroyed in a wildfire don't just lose the value of their house, they also lose a significant portion of their income for years afterward.} The researchers studied nearly all catastrophic wildfires in the United States from 2003 to 2022 and analyzed property damage alongside occupant demographics and income data. 
+\noindent \textbf{In a new working paper, Baylis et al. (2026) find that those whose homes were destroyed in a wildfire don't just lose the value of their house, they also lose a significant portion of their income for years afterward.} The researchers studied nearly all catastrophic wildfires in the United States from 2003 to 2022 and analyzed property damage alongside occupant demographics and income data.
+\hyphenpenalty=50 \exhyphenpenalty=50
 
 \vspace{6pt}
 
@@ -151,82 +95,28 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 % THE CHALLENGE  (~180–300 words) — the research-design story
 % ---------------------------------------------------------------------
 \sectionhead{The challenge}
-% GUIDANCE — Grant: this causal story is comparatively straightforward
-% (vs. the EPA compliance paper), so this section can be tighter/more direct.
-%   - The obstacle: can't observe what would have happened to the SAME
-%     people if their home hadn't burned. A simple before/after comparison
-%     risks picking up ordinary local income trends, not the fire's effect.
-%   - Comparing fire-zone residents to people elsewhere also confounds —
-%     occupants of wildfire-affected homes are wealthier, more likely to be
-%     white, and older than the U.S. population on average (Sec. 3.1),
-%     simply because of WHERE wildfires tend to occur — that reflects who
-%     lives in a fire's path, not the fire's effect.
-%   - Their solution: compare occupants of destroyed homes to occupants of
-%     homes in the SAME fire that survived, and to people living just
-%     outside that fire's perimeter (0–10km / 10–25km rings) — tracking
-%     each group's income in the years before and after.
-%   - What makes it credible: pre-fire, all groups were on similar income
-%     trajectories (no evidence of differential pre-trends) — so the
-%     post-fire divergence can be attributed to the fire/home loss, not
-%     pre-existing differences (meeting notes: "before, similar
-%     trajectories between home losers, home survivors, and similar people
-%     outside of fire perimeter").
-% Optional color on why this is a large financial shock worth taking
-% seriously (meeting notes): insurance often covers only 60–80% of a total
-% loss, and a wave of local rebuilding demand can push reconstruction costs
-% up further — destroyed-home occupants are absorbing a real financial hit
-% before even counting the income losses this paper measures (paper
-% footnote 8, re: insurance shortfalls in the 2021 Marshall Fire). Could
-% live here or fold into Background instead.
-\noindent \textbf{[State the core evaluation problem in one bold sentence a skimmer can catch.]} [Why seeing the counterfactual directly is impossible, so a stand-in comparison is needed.]
+\noindent \textbf{Measuring what a wildfire costs the people in its path is harder than it looks.} Comparing a household's income before and after the fire risks crediting the fire with changes already underway in the local economy.
 
-\noindent [The naive before/after comparison and why it misleads.]
+\noindent Comparing wildfire victims to people elsewhere raises a different concern: fires strike particular places, and the households in their path were already wealthier and older than the country as a whole. Narrowing to a single fire — setting households whose homes burned against neighbors whose homes came through standing — puts both groups in the same place at the same moment. Homes did not survive at equal rates, however: those that burned belonged to lower-income households than those left standing, so the two groups differed before the fire started.
 
-\noindent [The next instinct — comparing against a different group — and the complication it introduces.]
-
-\noindent [How the researchers got around it. \textbf{Bold the sentence naming the actual comparison they used.} Note what makes it fair.]
+\noindent \textbf{Baylis et al. instead tracked the two groups separately, comparing each against people living just outside the fire's perimeter.} These neighbors shared the same local job market, so whatever moved incomes across the area moved them for everyone. Before each fire, all three groups' incomes rose and fell together, supporting their use as a stand-in for what victims would have earned had the fire never reached them.
 
 \vspace{6pt}
 
 % ---------------------------------------------------------------------
 % FINDINGS  (~150 words + figure)
 % ---------------------------------------------------------------------
-% GUIDANCE — headline finding (Grant's result 2, "the effects"):
-%   - Occupants of DESTROYED homes see income fall for three years after
-%     the fire, peaking around an 11% drop in year two, returning to the
-%     comparison group's level by year four. Cumulative loss ≈ 30% of one
-%     year's pre-fire income (~$38,000 on average).
-%   - Critically: occupants of homes that SURVIVED the same fire, and
-%     people living just outside the perimeter, show close to NO income
-%     effect. The loss tracks whose home was actually destroyed — not
-%     everyone who lived through the fire (meeting notes: "people don't
-%     lose their house, they lose their earnings as well").
-%   - The "why" is an open question the paper itself doesn't fully resolve
-%     — worth naming as a limit/hook rather than speculating (e.g. time
-%     spent managing rebuilding; reduced hours rather than job loss, since
-%     employment rates barely move). Don't overclaim a mechanism the paper
-%     doesn't test.
-% Figure candidate: Fig. 4 Panel A ("The Effect of Wildfires on Income by
-% Damage") — income trajectory for Destroyed vs. Survived vs. Adjacent,
-% years -4 to +4 relative to the fire.
-% Meeting-note tip: the event-study coefficients and the raw group-average
-% trajectories "look pretty much the same" — a plainer raw-data line chart
-% may read more intuitively to a general audience than a formal coefficient
-% plot; worth trying both before committing.
-% Ask Grant for exact point estimates before building the recreation
-% script — not all are disclosed in the paper text, and pull numbers only
-% from the paper, not from any slide deck.
-\sectionhead{[The finding, stated — e.g. "Losing a home costs years of income, not just the rebuild"]}
-\noindent [State the result, pointing the reader to the figure below. \textbf{Bold the headline finding.}]
+\sectionhead{Income fell only for those who lost a home}
+\noindent Households whose homes were destroyed earned less than their neighbors just outside the perimeter for three years running — about 11\% less at the low point in the second year, before catching back up by the fourth (see figure). Added up, the shortfall comes to roughly 30\% of a single year's pre-fire income, or about \$38,000, on top of what the rebuild itself cost. Households whose homes survived the same fires barely departed from those neighbors at all. \textbf{The loss tracks whose house burned, not who lived through the fire.}
 
 \vspace{6pt}
 
 \begin{center}
 \begin{minipage}{0.75\linewidth}
-\figtitle{The Wildfire's effect on income, year by year}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
+\figtitle{The wildfire's effect on income, year by year}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
 \includegraphics[width=\linewidth]{../data-viz/figures/fig1-income-by-damage.png}
 \par\vspace{3pt}
-{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} This figure shows the estimated effect of a wildfire on the incomes of people who lived inside its perimeter. One line follows occupants whose homes were destroyed; the other follows occupants of homes in the same fires that survived. Both are measured against similar people who lived just outside the perimeter, and both are set to zero in the year before the fire --- so a point below the line means that group had fallen behind those outside neighbors, and a point on the line means it had kept pace. The estimates account for occupants' characteristics and for anything that affected everyone caught in the same fire in the same year; the shaded bands show the range of uncertainty around each estimate. If losing a home, rather than living through a fire, is what costs people income, only the line for destroyed homes would fall after the fire. \par}
+{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} This figure shows the estimated effect of a wildfire on the incomes of people who lived inside its perimeter. One line follows occupants whose homes were destroyed; the other follows occupants of homes in the same fires that survived. Both are measured against similar people who lived just outside the perimeter, and both are set to zero in the year before the fire. A point below the line means that group had fallen behind those outside neighbors. The estimates account for occupants' characteristics and for anything that affected everyone caught in the same fire in the same year. If living through a fire, rather than losing a home to the fire, is what costs people income, both of the lines would fall after the fire. \par}
 \end{minipage}
 \end{center}
 
@@ -236,31 +126,11 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 % IMPLICATIONS FOR POLICY  (~120 words, ~2 paragraphs)
 % ---------------------------------------------------------------------
 \sectionhead{Implications for policy}
-% GUIDANCE — Grant's result 3 (people -> place): recovery is slow and who
-% lives in a neighborhood changes.
-%   - Four years after a fire, half of destroyed addresses are still
-%     unoccupied (Fig. 9).
-%   - Among addresses that ARE reoccupied, incomes are notably higher than
-%     the pre-fire average, and occupants skew younger (share 65+ is
-%     lower) (Fig. 10) — the people moving back in/moving in new differ
-%     from the people who left.
-%   - Policy framing (meeting notes): recovery/aid programs should ask
-%     whether they're helping the people who actually lost their homes, or
-%     mostly benefiting whoever moves in afterward — relevant for
-%     disaster-recovery and housing-policy design.
-%   - Possible forward-looking angle (meeting notes takeaways): subsidizing
-%     defensive/mitigation investment before a fire, given how costly
-%     losing a home turns out to be. State any policy implication
-%     cautiously — one study, a specific set of large U.S. wildfires,
-%     2003–2022 ("exercise caution!").
-%   - Grant: no need to benchmark against other disaster types (hurricanes,
-%     floods, etc.) — the paper does this; the highlight doesn't need to.
-%   - Tone (meeting notes): "let the results speak for themselves" —
-%     wildfires are already personally salient to most readers; no need to
-%     oversell the stakes.
-\noindent [Draw out what the result means for policy if it holds more broadly. \textbf{Bold the one line worth keeping.} State the stakes soberly — let the facts land, don't lean on adjectives.]
+\noindent Wildfire loss in the U.S. is often pictured as a wealthy Californian's problem. These households were better off than the country as a whole on average, though within a single fire it was the lower-income homes that burned --- and a quarter of the people who lost one earned under \$42,000.
 
-\noindent [Name the limit plainly — one study, one setting — and what it does and doesn't imply, then restate the real point.]
+\noindent Four years after a fire, half of destroyed addresses are still unoccupied, and the homes that do come back tend to house higher-income, younger residents than those who lived there before. \textbf{Recovery aid measured by how fast a neighborhood rebuilds can miss whether the people who lost their homes are the ones who return.}
+
+\noindent This is one set of large U.S. wildfires between 2003 and 2022, and the paper does not settle why income falls. What it does establish is the size of the loss: enough that \textbf{helping households protect a home before a fire may be worth more than it appears when only the structure is counted.}
 
 \vspace{6pt}
 

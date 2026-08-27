@@ -35,7 +35,10 @@ source("../../../formats/data-viz/eil-theme.R")
 
 DATA_FILE <- "data/fig4a-estimates.csv"
 OUT_PATH  <- "figures/fig1-income-by-damage.png"
-SOURCE    <- "Environmental Inequality Lab · Wildfire Victims, 2026"
+# No lab/author line: this figure is embedded in the research highlight,
+# where the masthead and citation already carry attribution. The caption
+# is used only to name the uncertainty band once.
+CAPTION   <- "Shaded band = range of uncertainty"
 
 if (!file.exists(DATA_FILE))
   stop("missing ", DATA_FILE, " — run: python3 code/extract-fig4a.py")
@@ -110,4 +113,4 @@ p <- ggplot(mapping = aes(year, est)) +
 # chart, which keeps one more label off the plot (the EPA card does the
 # same). The document's note carries what "no change" is measured against.
 eil_save(p, OUT_PATH, width = 5.4, height = 3.0,
-         source = paste(SOURCE, "· shaded band = range of uncertainty"))
+         source = CAPTION)
