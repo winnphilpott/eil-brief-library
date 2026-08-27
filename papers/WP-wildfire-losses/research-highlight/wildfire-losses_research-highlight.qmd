@@ -223,10 +223,10 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 
 \begin{center}
 \begin{minipage}{0.75\linewidth}
-\figtitle{[Sentence-style figure title — what the chart shows]}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
-\includegraphics[width=\linewidth]{../data-viz/figures/[figure].png}
+\figtitle{The Wildfire's effect on income, year by year}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
+\includegraphics[width=\linewidth]{../data-viz/figures/fig1-income-by-damage.png}
 \par\vspace{3pt}
-{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} [Plain-language note: how to read the chart and what to conclude from it.]\par}
+{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} This figure shows the estimated effect of a wildfire on the incomes of people who lived inside its perimeter. One line follows occupants whose homes were destroyed; the other follows occupants of homes in the same fires that survived. Both are measured against similar people who lived just outside the perimeter, and both are set to zero in the year before the fire --- so a point below the line means that group had fallen behind those outside neighbors, and a point on the line means it had kept pace. The estimates account for occupants' characteristics and for anything that affected everyone caught in the same fire in the same year; the shaded bands show the range of uncertainty around each estimate. If losing a home, rather than living through a fire, is what costs people income, only the line for destroyed homes would fall after the fire. \par}
 \end{minipage}
 \end{center}
 

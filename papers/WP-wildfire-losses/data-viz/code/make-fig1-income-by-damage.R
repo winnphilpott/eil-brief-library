@@ -52,6 +52,13 @@ p <- ggplot(mapping = aes(year, est)) +
   # after-the-fire framing: a shaded region and a dashed marker at year 0
   annotate("rect", xmin = 0, xmax = Inf, ymin = -Inf, ymax = Inf,
            fill = eil_pal$band, alpha = 0.30) +
+  # period labels along the top edge, as on the EPA event-study card: the
+  # shading already marks the split, these name it. Colour matches the
+  # region each one sits over (grey before, red after).
+  annotate("text", x = -2.1, y = 0.046, label = "BEFORE THE FIRE",
+           size = 2.4, color = eil_pal$muted, fontface = "bold") +
+  annotate("text", x = 2.1, y = 0.046, label = "AFTER THE FIRE",
+           size = 2.4, color = eil_pal$accentred, fontface = "bold") +
   geom_vline(xintercept = 0, color = eil_pal$accentred,
              linetype = "dashed", linewidth = 0.4) +
   geom_hline(yintercept = 0, color = eil_pal$muted, linewidth = 0.45) +
@@ -87,7 +94,7 @@ p <- ggplot(mapping = aes(year, est)) +
   #
   # The top label names the quantity so the axis reads as income without
   # needing an axis title; the two below inherit the noun.
-  scale_y_continuous(limits = c(-0.138, 0.042),
+  scale_y_continuous(limits = c(-0.138, 0.055),
                      breaks = c(0, log(0.95), log(0.90)),
                      labels = c("Same income", "5% less", "10% less")) +
   scale_x_continuous(breaks = c(-4, -2, 0, 2, 4),
