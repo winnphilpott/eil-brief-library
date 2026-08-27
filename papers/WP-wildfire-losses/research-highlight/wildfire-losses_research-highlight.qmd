@@ -78,9 +78,7 @@ format:
 % ---------------------------------------------------------------------
 % TITLE + CITATION  (masthead repeats in the page header)
 % ---------------------------------------------------------------------
-\brieftitle{[Title — state the finding as a claim, not a topic.
-  GUIDANCE: candidate angle is Grant's result 2 — losing a home costs years
-  of income on top of the rebuild. Don't lean on "hazard"/"vulnerability."]}
+\brieftitle{Losing a home in a wildfire costs more than just the rebuild}
 \briefcitation{Lessons from ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims'' by Patrick Baylis, Judson Boomhower, Jonathan Colmer, and John Voorheis, NBER Working Paper, 2026.}
 
 \vspace{-2pt}
@@ -101,7 +99,7 @@ format:
 % is comparatively clean (Grant) — state it plainly, minimal hedging needed.
 \begin{bottomline}
 {\fontsize{11pt}{15pt}\selectfont
-\textbf{[The core finding in one bold sentence.]} [One or two sentences expanding on the finding and why it matters.]
+New research studying nearly all wildfires in the past 25 years shows that \textbf{when a wildfire destroys a home, occupants don't just lose the structure — they lose income too, for years afterward.} 
 }
 \end{bottomline}
 
@@ -143,9 +141,9 @@ format:
 % here with the figures... be creative." Confirm exact point estimates with
 % Grant before building the recreation script if reusing either — not all
 % are disclosed directly in the paper text.
-\noindent [Set up the policy problem. Define any key term on first use in \textbf{bold}, then explain it plainly. Spell out agencies on first mention. End on the open question the study tests.]
+\noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. Though this number is striking, it masks that \textbf{the financial consequences of disasters are unevenly distributed across households.} To respond well to disasters, it's important to know who bears the losses, whether the damage to household finances goes beyond the cost of rebuilding, and what happens to a neighborhood as it recovers. This is especially true for areas prone to wildfires, which are increasing in frequency and severity.
 
-\noindent [Describe the setting and data in plain language — who was studied, what records the researchers had, and over what period.]
+\noindent \textbf{In a new working paper, Baylis et al. (2026) find that those whose homes were destroyed in a wildfire don't just lose the value of their house, they also lose a significant portion of their income for years afterward.} The researchers studied nearly all catastrophic wildfires in the United States from 2003 to 2022 and analyzed property damage alongside occupant demographics and income data. 
 
 \vspace{6pt}
 
