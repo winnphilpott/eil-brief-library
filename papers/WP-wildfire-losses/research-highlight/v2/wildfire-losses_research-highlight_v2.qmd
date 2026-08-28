@@ -1,0 +1,173 @@
+---
+# =====================================================================
+#  Research highlight — one- to two-page PDF (LaTeX/PDF via Quarto)
+#  v2 — restructured after PI feedback (see v1 for the earlier draft):
+#  "The challenge" section dropped in favour of a walkthrough of the
+#  results; "Implications for policy" dropped; no comparisons to other
+#  studies' findings or methods.
+# =====================================================================
+format:
+  pdf:
+    pdf-engine: pdflatex
+    documentclass: article
+    fontsize: 11pt
+    geometry:
+      - top=0.4in
+      - bottom=0.45in
+      - left=0.65in
+      - right=0.65in
+      - includehead
+      - headheight=52pt
+      - headsep=7pt
+      - includefoot
+      - footskip=24pt
+    include-in-header:
+      - file: ../../../../formats/research-highlight/_style.tex
+      - text: |
+          % --- Background wrap figure ---
+          \usepackage{wrapfig}
+          % --- Running masthead + footer (logo, label, rule, page number) ---
+          \usepackage{fancyhdr}
+          \renewcommand{\headrulewidth}{0pt}
+          \renewcommand{\footrulewidth}{0pt}
+          \fancypagestyle{brief}{%
+            \fancyhf{}%
+            \fancyhead[L]{%
+              \begin{minipage}[c]{0.62\textwidth}\raggedright\color{ink}\includegraphics[height=0.45in]{../../../../formats/logos/eil-logo-maroon.png}\end{minipage}\hfill%
+              \begin{minipage}[c]{0.36\textwidth}\raggedleft\fontsize{8.25pt}{10pt}\selectfont\bfseries\color{accentred}\textls[200]{\MakeUppercase{Research Highlight}}\end{minipage}%
+              \par\vspace{2pt}%
+              \noindent\textcolor{ink}{\rule{\textwidth}{2.2pt}}%
+            }%
+            \fancyfoot[C]{%
+              \color{warmrule}\rule{\textwidth}{0.7pt}\par\vspace{3pt}%
+              \hbox to\textwidth{%
+                \color{faint}\fontsize{7.4pt}{9pt}\selectfont
+                For full paper:\hspace{0.4em}\href{[NBER working paper link — add once available]}{\color{faint}\underline{\textls[40]{[nber.org/papers/... — add once available]}}}%
+                \hfill
+                Page \thepage%
+              }%
+            }%
+          }
+          \pagestyle{brief}
+    keep-tex: true
+---
+
+```{=latex}
+% ---------------------------------------------------------------------
+% TITLE + CITATION  (masthead repeats in the page header)
+% ---------------------------------------------------------------------
+\brieftitle{Losing a home to wildfire costs \$38,000 beyond the rebuild}
+\briefcitation{Lessons from ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims'' by Patrick Baylis, Judson Boomhower, Jonathan Colmer, and John Voorheis, NBER Working Paper, 2026.}
+
+\vspace{-2pt}
+
+% override body font size for this document
+\fontsize{10.5pt}{13.5pt}\selectfont
+
+% ---------------------------------------------------------------------
+% BOTTOM LINE  (~40–50 words)
+% ---------------------------------------------------------------------
+\begin{bottomline}
+{\fontsize{11pt}{15pt}\selectfont
+New research studying around 150 major U.S. wildfires over two decades shows that \textbf{when a wildfire destroys a home, occupants don't just lose the structure --- they lose income too, for years afterward}.
+}
+\end{bottomline}
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% BACKGROUND  (~2 paragraphs)
+% ---------------------------------------------------------------------
+\sectionhead{Background}
+% TODO — PLACEHOLDER: swap the box below for the chosen photo. Drop the
+% image into ../../data-viz/figures/ and replace the \fcolorbox line with
+%   \includegraphics[width=3.1in]{../../data-viz/figures/<filename>}
+% then fill in the photo credit line beneath it.
+\begin{wrapfigure}{r}{3.25in}
+  \vspace{-\intextsep}
+  \centering
+  \fcolorbox{warmrule}{white}{\parbox[c][1.05in][c]{3.05in}{\centering\color{faint}\fontsize{8.5pt}{11pt}\selectfont PHOTO PLACEHOLDER\\[3pt]\fontsize{7.4pt}{9.5pt}\selectfont 3.1in wide --- replace with the wildfire photo}}
+  \par\vspace{3pt}
+  {\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Photo:} [credit --- add]\par}
+\end{wrapfigure}
+\hyphenpenalty=10000 \exhyphenpenalty=10000
+\noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. A number that large hides more than it shows. It doesn't say who paid, how much of the loss insurance covered, or what happened to households once the rebuilding was done. \textbf{Those costs fall unevenly, and they don't stop when the house goes back up.} This is especially true of wildfire, which climate change and continued building in high-risk areas are making more frequent and more severe.
+
+\noindent Baylis et al.\ (2026) put a number on that loss. The researchers studied around 150 major wildfires in five western states between 2003 and 2022 --- the fires behind more than 7 in 10 of all U.S. homes destroyed by wildfire in that period --- pairing official post-fire damage inspections of every structure inside each perimeter with two decades of tax and Census records. \textbf{These are not estimates from a sample}, but the recorded outcome for every home in each fire's path, matched to the income of the people who lived there.
+\hyphenpenalty=50 \exhyphenpenalty=50
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% WHO IS IN THE FIRE'S PATH + THE WITHIN-FIRE INCOME GAP
+% (merged from two sections when condensing v2 to two pages)
+% ---------------------------------------------------------------------
+\sectionhead{Lower-income homes burned more often, even on the same street}
+\noindent The people in these fires' paths earned more than the U.S. population on average and were more likely to be white, reflecting where wildfire risk sits --- the affluent periphery of western cities, much of it in California. That average covers a wide range, and a quarter of the people who lost a home earned under \$42,000. Within a fire, it was consistently the lower-income homes that burned: occupants of destroyed homes earned \$132,700 before the fire on average, against \$219,800 for occupants of homes that survived the same fires. Most of that gap is across fires, and it does not vanish when the comparison narrows. \textbf{Set two homes on the same street in the same fire, with similar lot characteristics, and the one that burned still belonged to a household earning about \$20,000 less.}
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% THE HEADLINE RESULT  (+ figure)
+% ---------------------------------------------------------------------
+\sectionhead{Income fell only for those who lost a home}
+\noindent To measure what the fire itself cost, the researchers compared each group against people living just outside the perimeter --- same job market, same year. All three groups' incomes had moved together for years beforehand. Afterward, households whose homes were destroyed earned less than those neighbors for three years running, about 11\% less at the low point in the second year, recovering by the fourth. Added up, the shortfall comes to 30\% of a single year's pre-fire income, roughly \$38,000, while households whose homes survived showed no departure at all. \textbf{The loss tracks whose house burned, not who lived through the fire.}
+
+\vspace{6pt}
+
+% figure floats to the top of the next page so the body text can fill
+% page 1 instead of leaving a gap where the block wouldn't fit
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.66\linewidth}
+\figtitle{The wildfire's effect on income, year by year}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
+\includegraphics[width=\linewidth]{../../data-viz/figures/fig1-income-by-damage.png}
+\par\vspace{3pt}
+{\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} One line follows occupants whose homes were destroyed; the other, occupants of homes in the same fires that survived. Both are measured against similar people just outside the perimeter, set to zero the year before the fire. A point below the line means that group fell behind. If the fire itself, rather than the loss of a home, were what costs people income, both lines would fall. \par}
+\end{minipage}
+\end{figure}
+
+\vspace{4pt}
+
+% HOW THE LOSS SHOWS UP — folded in under the finding above when
+% condensing v2 to two pages; it elaborates the same result.
+\noindent The drop did not come from people losing work: employment barely moved after the fire, and neither did the rate of job changes. It appears instead in hours, pointing to the demands of the rebuild itself --- the loss fell hardest on people who owned their home before the fire, while renters' losses faded within two or three years. Victims also drew down retirement savings, which still fell short of closing the gap; about 10\% moved to another county and had not returned four years later.
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% NEIGHBORHOOD CHANGE
+% ---------------------------------------------------------------------
+\sectionhead{Four years on, half the burned homes are still empty}
+\noindent Occupancy at destroyed addresses fell by half after the fire and stayed there for four years. The homes that did come back housed residents earning noticeably more than the people who lived there before, and the share of residents over 65 fell sharply. \textbf{A neighborhood can rebuild without the people who lost their homes returning to it}, leaving a recovery program measured by rebuilding progress unable to say which group it reached.
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% CLOSING
+% ---------------------------------------------------------------------
+\sectionhead{The full cost doesn't appear in a count of what burned}
+\noindent Catastrophic wildfires have grown sharply more common and are projected to keep growing, putting more American households within reach of one. These are not distant events: the January 2025 fires in Pacific Palisades and Pasadena fall outside this study's window, and the paper looks at them anyway --- the same pattern holds, with the homes that burned belonging to lower-income households. Every additional fire carries the cost measured here: for a typical victim, roughly \$72,000 in uninsured property damage, and about half again on top of that in income that never arrives. \textbf{Counting what a wildfire costs means following both the people and the places it burned, for years after the fire is out.}
+
+\vspace{6pt}
+
+% ---------------------------------------------------------------------
+% FOR MORE INFO
+% ---------------------------------------------------------------------
+% GUIDANCE: corresponding author/contact not stated in the paper — confirm
+% with the author team before publishing. Titles/ranks below are left
+% blank intentionally (not stated in the paper) — fill in once confirmed.
+\begin{moreinfo}
+Contact [Corresponding author] ([email]) with questions about this research.\par
+
+Baylis, Patrick, Judson Boomhower, Jonathan Colmer, and John Voorheis. 2026. ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims.'' NBER Working Paper. \href{[NBER working paper link — add once available]}{\color{cite}\underline{[nber.org/papers/... — add once available]}}.\par
+
+\textbf{Patrick Baylis} is [title] at the Vancouver School of Economics, University of British Columbia.\par
+\textbf{Judson Boomhower} is [title] in the Department of Economics at the University of California San Diego, and [status] at NBER.\par
+\textbf{Jonathan Colmer} is [title] in the Department of Economics at the University of Virginia.\par
+\textbf{John Voorheis} is [title] at the Center for Economic Studies, U.S. Census Bureau.\par
+
+The \href{https://www.environmental-inequality-lab.org/}{\color{cite}\underline{Environmental Inequality Lab}} is a nonpartisan research group that applies a rigorous, data-driven approach to understand how our environment shapes economic opportunity and well-being.\par
+\end{moreinfo}
+
+```

@@ -18,7 +18,7 @@ format:
       - includefoot
       - footskip=24pt
     include-in-header:
-      - file: ../../../formats/research-highlight/_style.tex
+      - file: ../../../../formats/research-highlight/_style.tex
       - text: |
           % --- Background wrap figure ---
           \usepackage{wrapfig}
@@ -29,7 +29,7 @@ format:
           \fancypagestyle{brief}{%
             \fancyhf{}%
             \fancyhead[L]{%
-              \begin{minipage}[c]{0.62\textwidth}\raggedright\color{ink}\includegraphics[height=0.45in]{../../../formats/logos/eil-logo-maroon.png}\end{minipage}\hfill%
+              \begin{minipage}[c]{0.62\textwidth}\raggedright\color{ink}\includegraphics[height=0.45in]{../../../../formats/logos/eil-logo-maroon.png}\end{minipage}\hfill%
               \begin{minipage}[c]{0.36\textwidth}\raggedleft\fontsize{8.25pt}{10pt}\selectfont\bfseries\color{accentred}\textls[200]{\MakeUppercase{Research Highlight}}\end{minipage}%
               \par\vspace{2pt}%
               \noindent\textcolor{ink}{\rule{\textwidth}{2.2pt}}%
@@ -65,7 +65,7 @@ format:
 % ---------------------------------------------------------------------
 \begin{bottomline}
 {\fontsize{11pt}{15pt}\selectfont
-New research studying nearly all wildfires in the past 25 years shows that \textbf{when a wildfire destroys a home, occupants don't just lose the structure — they lose income too, for years afterward.} 
+New research studying around 150 major U.S. wildfires over two decades shows that \textbf{when a wildfire destroys a home, occupants don't just lose the structure — they lose income too, for years afterward.} 
 }
 \end{bottomline}
 
@@ -81,12 +81,12 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 \begin{wrapfigure}{r}{3.85in}
   \vspace{-\intextsep}
   \centering
-  \includegraphics[width=3.85in]{../data-viz/figures/fig-comparison-groups.pdf}
+  \includegraphics[width=3.85in]{../../data-viz/figures/fig-comparison-groups.pdf}
 \end{wrapfigure}
 \hyphenpenalty=10000 \exhyphenpenalty=10000
 \noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. Though this number is striking, it masks that \textbf{the financial consequences of disasters are unevenly distributed across households.} To respond well to disasters, it's important to know who bears the losses, whether the damage to household finances goes beyond the cost of rebuilding, and what happens to a neighborhood as it recovers. This is especially true for areas prone to wildfires, which are increasing in frequency and severity.
 
-\noindent \textbf{In a new working paper, Baylis et al. (2026) find that those whose homes were destroyed in a wildfire don't just lose the value of their house, they also lose a significant portion of their income for years afterward.} The researchers studied nearly all catastrophic wildfires in the United States from 2003 to 2022 and analyzed property damage alongside occupant demographics and income data.
+\noindent \textbf{In a new working paper, Baylis et al. (2026) find that those whose homes were destroyed in a wildfire don't just lose the value of their house, they also lose a significant portion of their income for years afterward.} The researchers studied around 150 major wildfires in five western states between 2003 and 2022 — the fires behind more than 70\% of all U.S. homes destroyed by wildfire in that period — and analyzed property damage alongside occupant demographics and income data.
 \hyphenpenalty=50 \exhyphenpenalty=50
 
 \vspace{6pt}
@@ -114,7 +114,7 @@ New research studying nearly all wildfires in the past 25 years shows that \text
 \begin{center}
 \begin{minipage}{0.75\linewidth}
 \figtitle{The wildfire's effect on income, year by year}{Source: Baylis, Boomhower, Colmer \& Voorheis (2026), Fig.\ 4a.}
-\includegraphics[width=\linewidth]{../data-viz/figures/fig1-income-by-damage.png}
+\includegraphics[width=\linewidth]{../../data-viz/figures/fig1-income-by-damage.png}
 \par\vspace{3pt}
 {\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Note:} This figure shows the estimated effect of a wildfire on the incomes of people who lived inside its perimeter. One line follows occupants whose homes were destroyed; the other follows occupants of homes in the same fires that survived. Both are measured against similar people who lived just outside the perimeter, and both are set to zero in the year before the fire. A point below the line means that group had fallen behind those outside neighbors. The estimates account for occupants' characteristics and for anything that affected everyone caught in the same fire in the same year. If living through a fire, rather than losing a home to the fire, is what costs people income, both of the lines would fall after the fire. \par}
 \end{minipage}
