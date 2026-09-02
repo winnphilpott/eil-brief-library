@@ -42,7 +42,7 @@ format:
               \color{warmrule}\rule{\textwidth}{0.7pt}\par\vspace{3pt}%
               \hbox to\textwidth{%
                 \color{faint}\fontsize{7.4pt}{9pt}\selectfont
-                For full paper:\hspace{0.4em}\href{[NBER working paper link — add once available]}{\color{faint}\underline{\textls[40]{[nber.org/papers/... — add once available]}}}%
+                For full paper:\hspace{0.4em}\href{[https://www.nber.org/papers/w35675]}{\color{faint}\underline{\textls[40]{[nber.org/papers/... — add once available]}}}%
                 \hfill
                 Page \thepage%
               }%
@@ -56,7 +56,7 @@ format:
 % ---------------------------------------------------------------------
 % TITLE + CITATION  (masthead repeats in the page header)
 % ---------------------------------------------------------------------
-\brieftitle{Losing a home to wildfire costs \$38,000 beyond the rebuild}
+{\raggedright\brieftitle{The burden of losing a home to wildfire: income falls for years \mbox{afterward}}}
 \briefcitation{Lessons from ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims'' by Patrick Baylis, Judson Boomhower, Jonathan Colmer, and John Voorheis, NBER Working Paper, 2026.}
 
 \vspace{-2pt}
@@ -79,23 +79,20 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 % BACKGROUND  (~2 paragraphs)
 % ---------------------------------------------------------------------
 \sectionhead{Background}
-% TODO — PLACEHOLDER: swap the box below for the chosen photo.
-%   \includegraphics[width=3.1in]{<filename>}
-% Use a US federal government source (NIFC, USDA Forest Service, NPS) —
-% public domain, so the credit is just "Photo: USDA Forest Service".
-% Note CAL FIRE is a *state* agency and is NOT automatically public domain.
-% Any Creative Commons image needs creator + license named in the credit line.
+% Photo: Mike Newbry, via Unsplash (unsplash.com/photos/DwtX9mMHBJ0).
+% Unsplash License — commercial use permitted, attribution not required but given.
+% wildfire-newbry.jpg is a 1900px working copy; -original.jpg is the 6000px download.
 \begin{wrapfigure}{r}{3.25in}
   \vspace{-\intextsep}
   \centering
-  \fcolorbox{warmrule}{white}{\parbox[c][1.05in][c]{3.05in}{\centering\color{faint}\fontsize{8.5pt}{11pt}\selectfont PHOTO PLACEHOLDER\\[3pt]\fontsize{7.4pt}{9.5pt}\selectfont 3.1in wide --- replace with the wildfire photo}}
+  \includegraphics[width=3.1in]{wildfire-newbry.jpg}
   \par\vspace{3pt}
-  {\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Photo:} [credit --- add]\par}
+  {\color{faint}\fontsize{7.1pt}{9.5pt}\selectfont \textit{Photo:} Mike Newbry / Unsplash\par}
 \end{wrapfigure}
 \hyphenpenalty=10000 \exhyphenpenalty=10000
-\noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. A number that large hides more than it shows. \textbf{Those costs fall unevenly, and they don't stop after lost homes are rebuilt.} The costs of wildfires are of particular interest as climate change and continued building in high-risk areas are making them more frequent and more severe.
+\noindent Global economic losses from natural catastrophes totaled \$320 billion in 2024. This figure helps highlight how important this issue is, but doesn't provide enough information for action to be taken. \textbf{Costs fall unevenly across people and places, which is essential to understand for effective responses.} Destructive wildfires have grown far more common over the past decade, and three forces are expected to push that number higher: a warming climate, more building in fire-prone places, and the dry brush and dead trees that have piled up after decades of fire suppression. Responding well means knowing what these fires cost and who pays.
 
-\noindent Baylis et al.\ studied around 150 major wildfires in five western states between 2003 and 2022 --- the fires behind more than 7 in 10 of all U.S. homes destroyed by wildfire in that period --- pairing official post-fire damage inspections of every structure inside each perimeter with two decades of tax and Census records. \textbf{The recorded outcome for every home in each fire's path is matched to the income of the people who lived there, providing an incredibly detailed view of the distributional consequences of wildfires.}
+\noindent Baylis et al.\ studied around 150 major wildfires in five western states between 2003 and 2022, representing more than 7 in 10 of all U.S. homes destroyed by wildfire in that period. They paired official post-fire damage inspections of every structure inside each fire perimeter with tax and Census records to track affected people and their incomes. \textbf{The structural status for every home in each fire's path is matched to the income of the people who lived there, providing an incredibly detailed view of the distributional consequences of wildfires.}
 \hyphenpenalty=50 \exhyphenpenalty=50
 
 \vspace{6pt}
@@ -105,7 +102,7 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 % (merged from two sections when condensing v2 to two pages)
 % ---------------------------------------------------------------------
 \sectionhead{Lower-income homes burned more often, even on the same street}
-\noindent The people in these fires' paths earned more than the U.S. population on average and were more likely to be white, reflecting where wildfires are most prevalent --- the western U.S., many of them in California. However, that average income covers a wide range, and a quarter of the people who lost a home earned under \$42,000. Within a fire, it was consistently the lower-income homes that burned: \textbf{occupants of destroyed homes earned \$132,700 on average before the fire, against \$219,800 for occupants of homes that survived the same fires.}
+\noindent The people in the fires' paths earned more than the U.S. population on average and were more likely to be white, reflecting where wildfires are most prevalent --- the western U.S., many of them in California. However, within any single fire, the people who lost homes earned less than their surviving neighbors: \textbf{occupants of destroyed homes earned \$132,700 on average before the fire, against \$219,800 for occupants of homes that survived the same fires.} A quarter of those who lost a home earned under \$42,000.
 
 \vspace{6pt}
 
@@ -113,9 +110,7 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 % THE HEADLINE RESULT  (+ figure)
 % ---------------------------------------------------------------------
 \sectionhead{Income fell only for those who lost a home}
-\noindent To measure what the fire itself cost, the researchers compared those who did and those who didn't lose a home against people living just outside the perimeter, all in the same job market and same year. All three groups' incomes had moved together for years beforehand. Afterward, \textbf{households whose homes were destroyed earned less than those neighbors for three years running, about 11\% less at the low point in the second year, recovering by the fourth}. Added up, the shortfall comes to 30\% of a single year's pre-fire income, roughly \$38,000, while \textbf{households whose homes survived showed no decline in income}.
-
-\vspace{6pt}
+\noindent To measure the costs of the fire outside of home reconstruction, the researchers compared those who did and those who didn't lose a home against people living just outside the perimeter, all in the same job market and same year. All three groups' incomes had moved together for years beforehand, allowing researchers to assume that if those who lost a home had not been affected by the fire, their incomes would have followed the same trajectory as the other groups. However, \textbf{households whose homes were destroyed earned less than their neighbors for three years running, about 11\% less at the low point in the second year, recovering by the fourth}. Added up, the shortfall comes to 30\% of a single year's pre-fire income, roughly \$38,000, while \textbf{households whose homes survived showed no decline in income}.
 
 % figure floats to the top of the next page so the body text can fill
 % page 1 instead of leaving a gap where the block wouldn't fit
@@ -129,11 +124,9 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 \end{minipage}
 \end{figure}
 
-\vspace{4pt}
-
 % HOW THE LOSS SHOWS UP — folded in under the finding above when
 % condensing v2 to two pages; it elaborates the same result.
-\noindent The drop did not come from people losing work: employment barely dipped after the fire, and neither did the rate of job changes. Loss of income instead appears in hours, pointing to the demands of the rebuild itself --- the loss fell hardest on people who owned their home before the fire, while renters' losses faded within two or three years. Victims also drew down retirement savings, which still fell short of closing the gap; about 10\% moved to another county and had not returned four years later.
+\noindent The drop did not come from people losing work: employment barely dipped after the fire, and neither did the rate of job changes, which points to fewer hours worked as the likely source. The loss fell hardest on people who owned their home before the fire, while renters' losses faded within two or three years --- a pattern consistent with the demands of managing a rebuild. Victims also drew down retirement savings, which still fell short of closing the gap; about 10\% moved to another county and had not returned four years later.
 
 \vspace{6pt}
 
@@ -152,7 +145,7 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 % CLOSING
 % ---------------------------------------------------------------------
 \sectionhead{The full cost doesn't appear in a count of what burned}
-\noindent Catastrophic wildfires have grown more common and are projected to keep growing. These are not distant events: the January 2025 fires in Pacific Palisades and Pasadena fall outside this study's window, and the paper looks at them anyway. The same pattern holds, with the homes that burned belonging to lower-income households. Every additional fire carries the cost measured here: for a typical victim, roughly \$72,000 in uninsured property damage, and about half again on top of that in income that never arrives. \textbf{Counting what a wildfire costs means following both the people and the places it burned, for years after the fire is out.}
+\noindent Catastrophic wildfires are becoming more frequent, and these are not distant events. The January 2025 fires in Pacific Palisades and Pasadena fell outside this study's window, and the researchers found that the same pattern holds, with the homes that burned belonging to lower-income households. Every additional fire carries the cost measured here: for a typical victim, roughly \$72,000 in uninsured property damage, and about half again on top of that in income that never arrives. \textbf{Counting what a wildfire costs means following both the people and the places it burned, for years after the fire.}
 
 \vspace{6pt}
 
@@ -165,12 +158,12 @@ New research studying around 150 major U.S. wildfires over two decades shows tha
 \begin{moreinfo}
 Contact [Corresponding author] ([email]) with questions about this research.\par
 
-Baylis, Patrick, Judson Boomhower, Jonathan Colmer, and John Voorheis. 2026. ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims.'' NBER Working Paper. \href{[NBER working paper link — add once available]}{\color{cite}\underline{[nber.org/papers/... — add once available]}}.\par
+Baylis, Patrick, Judson Boomhower, Jonathan Colmer, and John Voorheis. 2026. ``The Distribution and Consequences of Natural Disasters: Evidence from U.S. Wildfire Victims.'' NBER Working Paper. \href{[NBER working paper link}{\color{cite}\underline{[https://www.nber.org/papers/w35675]}}.\par
 
-\textbf{Patrick Baylis} is [title] at the Vancouver School of Economics, University of British Columbia.\par
-\textbf{Judson Boomhower} is [title] in the Department of Economics at the University of California San Diego, and [status] at NBER.\par
-\textbf{Jonathan Colmer} is [title] in the Department of Economics at the University of Virginia.\par
-\textbf{John Voorheis} is [title] at the Center for Economic Studies, U.S. Census Bureau.\par
+\textbf{Patrick Baylis} is in the Vancouver School of Economics, University of British Columbia.\par
+\textbf{Judson Boomhower} is in the Department of Economics at the University of California San Diego, and NBER.\par
+\textbf{Jonathan Colmer} is in the Department of Economics at the University of Virginia.\par
+\textbf{John Voorheis} is in the Center for Economic Studies, U.S. Census Bureau.\par
 
 The \href{https://www.environmental-inequality-lab.org/}{\color{cite}\underline{Environmental Inequality Lab}} is a nonpartisan research group that applies a rigorous, data-driven approach to understand how our environment shapes economic opportunity and well-being.\par
 \end{moreinfo}
